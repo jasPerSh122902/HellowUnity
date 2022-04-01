@@ -8,6 +8,8 @@ public class EnemyMovmentBehavior : MovementBahavior
     private Transform _target;
     [SerializeField]
     private float _speed;
+    [SerializeField]
+    private int _damage;
 
     public float Speed 
     {
@@ -36,9 +38,9 @@ public class EnemyMovmentBehavior : MovementBahavior
         if (other.transform == _target)
         {
             //increament the enemy count if the target was a goal
-            GoalBehavior goal = other.GetComponent<GoalBehavior>();
-            if (goal)
-                 goal.EnemyCount++;
+            GoalBehavior goalHealth = other.GetComponent<GoalBehavior>();
+            if (goalHealth)
+                goalHealth.TakeDamage(_damage);
           //Destroyes this enemy
             Destroy(gameObject);
         }
@@ -48,7 +50,6 @@ public class EnemyMovmentBehavior : MovementBahavior
     /// </summary>
     private void OnMouseDown()
     {
-        
         Destroy(gameObject);
     }
 }
