@@ -11,7 +11,7 @@ public class BulletEmiterBehavior : MonoBehaviour
     [SerializeField]
     private float _bulletForce;
 
-    public void Fire() 
+    public void Fire()
     {
         GameObject bullet = Instantiate(_bulletRef.gameObject, transform.position, transform.rotation);
         BulletBehavior bulletBehavior = bullet.GetComponent<BulletBehavior>();

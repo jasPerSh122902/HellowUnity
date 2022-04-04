@@ -14,7 +14,7 @@ public class TurretBehavor : MonoBehaviour
     [SerializeField]
     private bool _infiniteAmmo = true;
 
-    public bool CheckHasAmmo() 
+    public bool CheckHasAmmo()
     {
         if (_infiniteAmmo) return true;
 
@@ -25,12 +25,12 @@ public class TurretBehavor : MonoBehaviour
     {
         if (!CheckHasAmmo()) return;
         _bulletTimer += Time.deltaTime;
-        if (_bulletTimer >= _bulletCooldown && _ammo > 0 )
+        if (_bulletTimer >= _bulletCooldown && _ammo > 0)
         {
             _gun.Fire();
             _bulletTimer = 0;
 
-            if(!_infiniteAmmo)
+            if (!_infiniteAmmo)
                 _ammo--;
         }
     }

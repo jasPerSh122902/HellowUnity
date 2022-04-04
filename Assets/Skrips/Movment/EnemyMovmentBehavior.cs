@@ -11,27 +11,27 @@ public class EnemyMovmentBehavior : MovementBahavior
     [SerializeField]
     private int _damage;
 
-    public float Speed 
+    public float Speed
     {
         get { return _speed; }
         set { _speed = value; }
     }
 
-    public Transform Target 
+    public Transform Target
     {
         get { return _target; }
         set { _target = value; }
     }
 
     // Update is called once per frame
-     public override void Update()
-     {
+    public override void Update()
+    {
         Vector3 distance = _target.position - transform.position;
 
         Velocity = distance.normalized * Speed;
 
         base.Update();
-     }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -41,7 +41,7 @@ public class EnemyMovmentBehavior : MovementBahavior
             GoalBehavior goalHealth = other.GetComponent<GoalBehavior>();
             if (goalHealth)
                 goalHealth.TakeDamage(_damage);
-          //Destroyes this enemy
+            //Destroyes this enemy
             Destroy(gameObject);
         }
     }

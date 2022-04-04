@@ -20,7 +20,7 @@ public class BulletBehavior : MonoBehaviour
         get { return _ownerTag; }
         set { _ownerTag = value; }
     }
-    public Rigidbody Rigidbody 
+    public Rigidbody Rigidbody
     {
         get { return _rigidbody; }
     }

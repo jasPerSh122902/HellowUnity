@@ -9,7 +9,7 @@ public class MovementBahavior : MonoBehaviour
     /// <summary>
     /// speed and direction of the game object
     /// </summary>
-    public Vector3 Velocity 
+    public Vector3 Velocity
     {
         get { return _velocity; }
         set { _velocity = value; }

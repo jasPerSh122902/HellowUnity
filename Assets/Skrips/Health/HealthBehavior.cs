@@ -11,16 +11,16 @@ public class HealthBehavior : MonoBehaviour
     [SerializeField]
     private bool _distroyOnDeath;
 
-    public int Health 
+    public int Health
     {
-        get {return _health; }
+        get { return _health; }
     }
-    public bool IsAlive 
+    public bool IsAlive
     {
-        get {return _isAlive; }
+        get { return _isAlive; }
     }
 
-    public int TakeDamage(int damageAmount) 
+    public int TakeDamage(int damageAmount)
     {
         _health -= damageAmount;
 
@@ -28,7 +28,7 @@ public class HealthBehavior : MonoBehaviour
     }
     public virtual void OnDeath()
     {
-        
+
     }
 
     // Update is called once per frame
